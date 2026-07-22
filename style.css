@@ -240,4 +240,15 @@ body {
     margin-bottom: 64px;
   }
   .tile { border-width: 4px; }
+
+  /* Project name always visible at the bottom of the tile on mobile */
+  .tile::after {
+    opacity: 1;
+    font-size: 12px;
+    padding: 10px 6px 8px;
+    background: linear-gradient(to top,
+      rgba(46, 70, 56, 0.95) 0%,
+      rgba(46, 70, 56, 0.72) 38%,
+      rgba(46, 70, 56, 0) 72%);
+  }
 }
