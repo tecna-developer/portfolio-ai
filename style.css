@@ -108,11 +108,38 @@ body {
 .tile:nth-child(9)  { animation-delay: .65s; }
 .tile:nth-child(10) { animation-delay: .70s; }
 
+.tile {
+  position: relative;
+}
+
+/* Подпись проекта, проявляется при наведении */
+.tile::after {
+  content: attr(data-name);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 8px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  background: linear-gradient(to top, rgba(46, 70, 56, 0.92) 0%, rgba(46, 70, 56, 0.55) 45%, rgba(46, 70, 56, 0) 80%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
 .tile:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 14px var(--shadow);
   z-index: 1;
-  position: relative;
+}
+.tile:hover::after,
+.tile:focus-visible::after {
+  opacity: 1;
 }
 
 .tile svg {
