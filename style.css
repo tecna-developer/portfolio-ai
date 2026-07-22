@@ -151,6 +151,8 @@ body {
 /* ============ Contacts ============ */
 .contacts {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 28px;
   animation: fadeUp .6s ease .75s backwards;
 }
@@ -165,6 +167,45 @@ body {
 .contacts__icon:hover {
   transform: translateY(-3px);
   opacity: .8;
+}
+
+/* Copy email button */
+.copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.copy-email:hover {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
+}
+.copy-email:active { transform: translateY(0); }
+
+.copy-email__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.copy-email.is-copied {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #2e4638;
+}
+.copy-email.is-error {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #ffffff;
+  color: #8a2b2b;
 }
 
 /* ============ Animations ============ */

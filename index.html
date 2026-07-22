@@ -181,9 +181,62 @@
           <path d="M7.2 4.5a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4zM4.9 12h4.6v15H4.9V12zm7.6 0h4.4v2.1h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.1V27h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.9 1.9-2.9 3.9V27h-4.6V12z"/>
         </svg>
       </a>
+
+      <button class="copy-email" id="copyEmail" type="button" data-email="anna.tolstoukhova@hotmail.com" aria-label="Скопировать email анны">
+        <svg class="copy-email__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="9" width="12" height="12" rx="2"/>
+          <path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/>
+        </svg>
+        <span class="copy-email__label">Скопировать email</span>
+      </button>
     </footer>
 
   </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('copyEmail');
+      if (!btn) return;
+      var label = btn.querySelector('.copy-email__label');
+      var original = label.textContent;
+      var resetTimer;
+
+      async function copyEmail() {
+        var email = btn.dataset.email;
+        var ok = false;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+            ok = true;
+          }
+        } catch (e) { /* fall through to fallback */ }
+
+        if (!ok) {
+          // Fallback for non-secure contexts / older browsers
+          var ta = document.createElement('textarea');
+          ta.value = email;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+          document.body.removeChild(ta);
+        }
+
+        clearTimeout(resetTimer);
+        btn.classList.toggle('is-copied', ok);
+        btn.classList.toggle('is-error', !ok);
+        label.textContent = ok ? 'Скопировано ✓' : 'Не удалось — ' + email;
+        resetTimer = setTimeout(function () {
+          btn.classList.remove('is-copied', 'is-error');
+          label.textContent = original;
+        }, 2200);
+      }
+
+      btn.addEventListener('click', copyEmail);
+    })();
+  </script>
 
 </body>
 </html>
