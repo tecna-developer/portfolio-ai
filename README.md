@@ -10,10 +10,11 @@ only thing the page fetches from anywhere else is the webfont.
 
 ## Highlights
 
-- **Every tile is hand-drawn inline SVG.** Eleven project tiles, the brand mark, three
-  contact icons and the copy icon — sixteen SVGs, no image files, no icon font. They stay
-  sharp at any size, cost no extra requests, and take their colours from the same palette as
-  the page, so a tile cannot drift out of step with the design.
+- **Every tile is hand-drawn inline SVG.** Nine project tiles and a link to the GitHub
+  profile, plus the brand mark, three contact icons and the copy icon — fifteen SVGs in all,
+  no image files, no icon font. They stay sharp at any size, cost no extra requests, and take
+  their colours from the same palette as the page, so a tile cannot drift out of step with
+  the design.
 
 - **The grid needs no breakpoint.** `repeat(auto-fill, minmax(132px, 1fr))` lets the number
   of tiles per row follow the available width. The one media query that touches it lowers
