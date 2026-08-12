@@ -1,6 +1,6 @@
 /* ============ Flat mint portfolio (по мотивам jonrundle.com) ============ */
 :root {
-  --bg: #62d6a4;
+  --bg: #56987c;
   --text: #ffffff;
   --text-soft: rgba(255, 255, 255, 0.85);
   --tile-border: #ffffff;
@@ -8,9 +8,15 @@
   --font: 'Nunito', 'Trebuchet MS', system-ui, sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--bg);
@@ -42,13 +48,18 @@ body {
   color: var(--text);
   flex-shrink: 0;
 }
-.brand__mark svg { width: 100%; height: 100%; }
+
+.brand__mark svg {
+  width: 100%;
+  height: 100%;
+}
 
 .brand__name {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.25;
 }
+
 .brand__role {
   font-size: 14px;
   color: var(--text-soft);
@@ -74,7 +85,10 @@ body {
   text-underline-offset: 4px;
   transition: opacity .2s ease;
 }
-.intro a:hover { opacity: .75; }
+
+.intro a:hover {
+  opacity: .75;
+}
 
 /* ============ Works grid ============ */
 .works {
@@ -97,16 +111,45 @@ body {
 }
 
 /* лёгкий каскад появления плиток */
-.tile:nth-child(1)  { animation-delay: .25s; }
-.tile:nth-child(2)  { animation-delay: .30s; }
-.tile:nth-child(3)  { animation-delay: .35s; }
-.tile:nth-child(4)  { animation-delay: .40s; }
-.tile:nth-child(5)  { animation-delay: .45s; }
-.tile:nth-child(6)  { animation-delay: .50s; }
-.tile:nth-child(7)  { animation-delay: .55s; }
-.tile:nth-child(8)  { animation-delay: .60s; }
-.tile:nth-child(9)  { animation-delay: .65s; }
-.tile:nth-child(10) { animation-delay: .70s; }
+.tile:nth-child(1) {
+  animation-delay: .25s;
+}
+
+.tile:nth-child(2) {
+  animation-delay: .30s;
+}
+
+.tile:nth-child(3) {
+  animation-delay: .35s;
+}
+
+.tile:nth-child(4) {
+  animation-delay: .40s;
+}
+
+.tile:nth-child(5) {
+  animation-delay: .45s;
+}
+
+.tile:nth-child(6) {
+  animation-delay: .50s;
+}
+
+.tile:nth-child(7) {
+  animation-delay: .55s;
+}
+
+.tile:nth-child(8) {
+  animation-delay: .60s;
+}
+
+.tile:nth-child(9) {
+  animation-delay: .65s;
+}
+
+.tile:nth-child(10) {
+  animation-delay: .70s;
+}
 
 .tile {
   position: relative;
@@ -137,6 +180,7 @@ body {
   box-shadow: 0 6px 14px var(--shadow);
   z-index: 1;
 }
+
 .tile:hover::after,
 .tile:focus-visible::after {
   opacity: 1;
@@ -163,7 +207,12 @@ body {
   color: var(--text);
   transition: transform .2s ease, opacity .2s ease;
 }
-.contacts__icon svg { width: 100%; height: 100%; }
+
+.contacts__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .contacts__icon:hover {
   transform: translateY(-3px);
   opacity: .8;
@@ -185,11 +234,15 @@ body {
   cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
+
 .copy-email:hover {
   background: rgba(255, 255, 255, 0.24);
   transform: translateY(-2px);
 }
-.copy-email:active { transform: translateY(0); }
+
+.copy-email:active {
+  transform: translateY(0);
+}
 
 .copy-email__icon {
   width: 18px;
@@ -202,6 +255,7 @@ body {
   border-color: #ffffff;
   color: #2e4638;
 }
+
 .copy-email.is-error {
   background: rgba(255, 255, 255, 0.9);
   border-color: #ffffff;
@@ -210,16 +264,37 @@ body {
 
 /* ============ Animations ============ */
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -230,16 +305,31 @@ body {
 
 /* ============ Responsive ============ */
 @media (max-width: 720px) {
-  .page { padding: 32px 20px 44px; }
-  .brand { margin-bottom: 48px; }
-  .intro { margin-bottom: 56px; }
-  .intro p { font-size: 20px; }
+  .page {
+    padding: 32px 20px 44px;
+  }
+
+  .brand {
+    margin-bottom: 48px;
+  }
+
+  .intro {
+    margin-bottom: 56px;
+  }
+
+  .intro p {
+    font-size: 20px;
+  }
+
   .works {
     grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
     gap: 14px;
     margin-bottom: 64px;
   }
-  .tile { border-width: 4px; }
+
+  .tile {
+    border-width: 4px;
+  }
 
   /* Project name always visible at the bottom of the tile on mobile */
   .tile::after {
@@ -247,8 +337,8 @@ body {
     font-size: 12px;
     padding: 10px 6px 8px;
     background: linear-gradient(to top,
-      rgba(46, 70, 56, 0.95) 0%,
-      rgba(46, 70, 56, 0.72) 38%,
-      rgba(46, 70, 56, 0) 72%);
+        rgba(46, 70, 56, 0.95) 0%,
+        rgba(46, 70, 56, 0.72) 38%,
+        rgba(46, 70, 56, 0) 72%);
   }
 }
