@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Anna Tolstoukhova</title>
+  <desc id="logo-desc">A flowing monogram</desc>
+
+  <g fill="none" stroke="#56987C" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 100C32 94 44 56 56 27c3-8 10-9 14 0l31 73"/>
+    <path d="M24 72c-13 0-14 16-2 18 16 3 35-11 52-20 11-6 20-10 28-8"/>
+  </g>
+</svg>
