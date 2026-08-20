@@ -2,7 +2,10 @@
 :root {
   --bg: #5C7C69;
   --text: #ffffff;
-  --text-soft: rgba(255, 255, 255, 0.85);
+  --text-soft: #ffffff;
+  --control-bg: rgba(46, 70, 56, 0.22);
+  --control-bg-hover: rgba(46, 70, 56, 0.38);
+  --control-border: rgba(255, 255, 255, 0.75);
   --tile-border: #ffffff;
   --shadow: rgba(0, 0, 0, 0.08);
   --font: 'Nunito', 'Trebuchet MS', system-ui, sans-serif;
@@ -50,7 +53,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 72px;
+  margin-bottom: 56px;
   animation: fadeDown .7s ease backwards;
 }
 
@@ -80,14 +83,20 @@ body {
 
 /* ============ Intro ============ */
 .intro {
-  margin-bottom: 88px;
+  max-width: 900px;
+  margin-bottom: 64px;
   animation: fadeDown .7s ease .15s backwards;
+}
+
+.intro__text {
+  text-wrap: balance;
 }
 
 .intro p {
   font-size: 24px;
   font-weight: 400;
   line-height: 1.65;
+  text-wrap: pretty;
 }
 
 .intro a {
@@ -105,9 +114,9 @@ body {
 /* ============ Works grid ============ */
 .works {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 22px;
-  margin-bottom: 96px;
+  margin-bottom: 48px;
 }
 
 .tile {
@@ -239,8 +248,8 @@ body {
   font-size: 15px;
   font-weight: 600;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: var(--control-bg);
+  border: 1px solid var(--control-border);
   border-radius: 999px;
   padding: 10px 20px;
   cursor: pointer;
@@ -248,7 +257,7 @@ body {
 }
 
 .copy-email:hover {
-  background: rgba(255, 255, 255, 0.24);
+  background: var(--control-bg-hover);
   transform: translateY(-2px);
 }
 
@@ -316,17 +325,23 @@ body {
 }
 
 /* ============ Responsive ============ */
+@media (max-width: 900px) {
+  .works {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 720px) {
   .page {
     padding: 32px 20px 44px;
   }
 
   .brand {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   .intro {
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
 
   .intro p {
@@ -334,9 +349,9 @@ body {
   }
 
   .works {
-    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
 
   .tile {

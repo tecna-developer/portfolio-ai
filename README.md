@@ -16,9 +16,9 @@ only thing the page fetches from anywhere else is the webfont.
   their colours from the same palette as the page, so a tile cannot drift out of step with
   the design.
 
-- **The grid needs no breakpoint.** `repeat(auto-fill, minmax(132px, 1fr))` lets the number
-  of tiles per row follow the available width. The one media query that touches it lowers
-  the minimum to 104px on small screens; it does not redefine the layout.
+- **The grid forms a deliberate gallery.** Five equal columns create two complete rows on
+  wide screens, four columns keep the tiles readable at intermediate widths, and two
+  columns give every project a comfortably sized preview on phones.
 
 - **Tile captions come from the markup, not a copy of it.** Each link carries
   `data-name="…"`, and `.tile::after` renders it with `content: attr(data-name)`. The label
