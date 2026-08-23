@@ -63,6 +63,7 @@ favicon.svg    the "A" mark
 favicon.png    32x32 fallback for browsers without SVG favicon support
 og-image.png   1200x630 social preview
 img/           image assets
+.htaccess      Apache rules for the Bluehost copy: canonical host, no directory listing
 ```
 
 Class names follow a BEM-like convention (`.brand__name`, `.tile`, `.copy-email__icon`).
