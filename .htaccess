@@ -1,0 +1,21 @@
+# ============ Canonical host: https://tolstoukhova.com ============
+# Порядок правил важен: www обрабатывается первым и сразу уводит на https,
+# иначе http://www получил бы два последовательных перенаправления.
+
+RewriteEngine On
+
+# www → без www (и сразу на https)
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://tolstoukhova.com%{REQUEST_URI} [R=301,L]
+
+# http → https. Оба условия обязаны совпасть: на shared-хостинге TLS часто
+# терминируется прокси, и тогда %{HTTPS} равен off даже на защищённом
+# запросе — признаком служит заголовок X-Forwarded-Proto. Проверка только
+# по одному из них даёт бесконечный цикл перенаправлений.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ============ Hardening ============
+# Без индексного файла каталог не показывает своё содержимое.
+Options -Indexes
