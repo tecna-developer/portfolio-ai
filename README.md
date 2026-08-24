@@ -4,7 +4,7 @@ A one-page portfolio: who I am, a grid of work, and a way to get in touch. One H
 one stylesheet, one small inline script. No framework, no build step, no dependencies — the
 only thing the page fetches from anywhere else is the webfont.
 
-**Live:** https://tecna-developer.github.io/portfolio-ai/
+**Live:** https://tolstoukhova.com/
 
 ![Portfolio](og-image.png)
 
