@@ -319,8 +319,19 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .brand, .intro, .tile, .contacts {
     animation: none;
+  }
+
+  .tile:hover,
+  .contacts__icon:hover,
+  .copy-email:hover,
+  .copy-email:active {
+    transform: none;
   }
 }
 
