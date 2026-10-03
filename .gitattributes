@@ -1,0 +1,3 @@
+# Keep LF in the repository and in the working tree on every OS, so
+# Windows autocrlf never rewrites line endings (the server runs Apache).
+* text=auto eol=lf
