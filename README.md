@@ -59,6 +59,8 @@ npx serve
 ```
 index.html     the entire page: head, brand, intro, tile grid, contacts, copy script
 style.css      all styles, ~250 lines, grouped by section
+robots.txt     crawler access policy and sitemap location
+sitemap.xml    the canonical public URL submitted to search engines
 favicon.svg    the "A" mark
 favicon.png    32x32 fallback for browsers without SVG favicon support
 og-image.png   1200x630 social preview
