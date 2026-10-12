@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="icon" href="favicon.ico?v=2">
   <link rel="icon" href="favicon.png?v=2" type="image/png" sizes="32x32">
   <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml" sizes="any">
@@ -62,6 +62,23 @@
         <a href="mailto:anna.tolstoukhova@hotmail.com">get in touch</a>.
       </p>
 
+    </section>
+
+    <section class="redesigns" id="redesigns" aria-labelledby="redesigns-title">
+      <header class="redesigns__heading">
+        <div>
+          <h2 id="redesigns-title">Website redesigns</h2>
+          <p>Before, after, and the thinking behind the changes.</p>
+        </div>
+        <a href="cases/maksims/en.html" class="redesigns__open">Open full case <span aria-hidden="true">↗</span></a>
+      </header>
+      <div class="redesigns__summary">
+        <h3>Maksims OÜ</h3>
+        <p>An accounting website: clearer services and a simpler enquiry flow.</p>
+        <p class="redesigns__meta">Independent redesign concept · Case study in English / Russian · 8 slides</p>
+      </div>
+      <iframe class="redesigns__frame" id="maksims-case" src="cases/maksims/en.html?embed=1"
+        title="Maksims website redesign — eight-slide case study in English and Russian" loading="lazy" height="850"></iframe>
     </section>
 
     <!-- ===== Works grid ===== -->
@@ -228,6 +245,7 @@
 
   </div>
 
+  <script src="assets/redesign-case.js" defer></script>
   <script>
     (function () {
       var btn = document.getElementById('copyEmail');

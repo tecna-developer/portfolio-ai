@@ -48,6 +48,23 @@ body {
   padding: 48px 40px 56px;
 }
 
+/* ============ Redesign case studies ============ */
+.redesigns { margin: 72px 0 56px; padding-top: 32px; border-top: 1px solid var(--control-border); }
+.redesigns__heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+.redesigns h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; margin-bottom: 10px; }
+.redesigns__open { color: inherit; text-underline-offset: 5px; flex-shrink: 0; padding: 10px 0; }
+.redesigns__summary { margin: 28px 0 22px; }
+.redesigns h3 { font-size: 23px; margin-bottom: 4px; }
+.redesigns__meta { font-size: 14px; margin-top: 8px; }
+.redesigns__frame { display: block; width: 100%; border: 0; background: #f8f6ef; }
+.redesigns__open:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+@media (max-width: 700px) {
+  .redesigns { margin-top: 48px; }
+  .redesigns__heading { display: block; }
+  .redesigns__open { display: inline-block; margin-top: 10px; }
+  .redesigns__frame { height: 1200px; }
+}
+
 /* ============ Brand ============ */
 .brand {
   display: flex;
