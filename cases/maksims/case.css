@@ -31,3 +31,45 @@
 .case-dots button{min-width:22px}
 }
 @media(prefers-reduced-motion:reduce){.case-track{transition:none}}
+/* Compact homepage preview; the standalone case keeps its full narrative. */
+.embedded .case-carousel{display:grid;grid-template-columns:1fr auto;max-width:none}
+.embedded .case-language{grid-column:2;grid-row:1;order:initial;padding:6px 10px;gap:2px}
+.embedded .case-controls{grid-column:1;grid-row:1;order:initial;justify-content:flex-start;gap:10px;padding:6px 16px}
+.embedded .case-track{grid-column:1 / -1;grid-row:2;transition:none}
+.embedded .case-sources{display:none}
+.embedded .case-slide{height:430px;min-height:0;aspect-ratio:auto;padding:24px 30px;container-type:normal}
+.embedded .case-slide header,.embedded .case-slide footer,.embedded .eyebrow,.embedded .copy ul,.embedded .copy .small,.embedded .copy .pullquote,.embedded .copy .range,.embedded .copy .case-link,.embedded .shot-note{display:none}
+.embedded .split-content{display:grid;grid-template-columns:42% 53%;gap:5%;margin:0;height:100%;align-items:center}
+.embedded .copy h2,.embedded .intro h1{font-size:36px;line-height:1.08;margin:0;text-wrap:balance}
+.embedded .copy br,.embedded .intro br{display:none}
+.embedded .copy p,.embedded .intro p{font-size:16px;line-height:1.55;margin:16px 0 0}
+.embedded .copy p~p{display:none}
+.embedded figcaption{font-size:10px;line-height:1.5;margin:0 0 10px;letter-spacing:.03em}
+.embedded .form-shot img,.embedded .form-shot.old img,.embedded .form-shot.review img,.embedded .form-shot.short img,.embedded .mobile-shot img{height:300px;width:auto;max-width:100%;object-fit:contain;padding:0;border:0}
+.embedded .case-image-link{display:block;max-width:100%;color:inherit;cursor:zoom-in}
+.embedded .large-shot img{max-height:285px;object-fit:contain}
+.embedded .browser-frame{padding:0;border:0;background:none;border-radius:0}
+.embedded .browser-frame:before{display:none}
+.embedded .intro{display:flex;gap:32px;align-items:start;margin:0 0 24px}
+.embedded .intro h1{font-size:32px;max-width:58%}
+.embedded .intro p{font-size:14px;max-width:35%;margin:0}
+.embedded .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.embedded .compare img{max-height:235px;object-fit:contain;object-position:left top}
+.embedded .preview-hint{grid-column:1 / -1;margin:0;padding:8px 20px 12px;font-size:11px;text-align:center;background:var(--case-bg);color:var(--case-muted)}
+@media(max-width:600px){
+.embedded .case-controls{gap:6px;padding:6px 8px}
+.embedded .case-dots{display:none}
+.embedded .case-language{padding:6px 8px}
+.embedded .case-slide{height:480px;padding:22px}
+.embedded .split-content{grid-template-columns:1fr;grid-template-rows:auto 1fr;gap:16px;align-items:start}
+.embedded .copy h2,.embedded .intro h1{font-size:28px;max-width:none}
+.embedded .copy p,.embedded .intro p{font-size:14px;line-height:1.5;margin:10px 0 0;max-width:none}
+.embedded .form-shot,.embedded .mobile-shot,.embedded .large-shot{align-self:center;min-height:0}
+.embedded .form-shot img,.embedded .form-shot.old img,.embedded .form-shot.review img,.embedded .form-shot.short img,.embedded .mobile-shot img{height:230px;max-width:100%}
+.embedded .large-shot img{max-height:225px}
+.embedded .intro{display:block;margin-bottom:24px}
+.embedded .compare{gap:12px}
+.embedded .compare figcaption span{display:none}
+.embedded .compare img{max-height:200px}
+}
+@media(max-width:360px){.embedded .case-slide{padding:18px}.embedded .copy h2,.embedded .intro h1{font-size:25px}.embedded .copy p,.embedded .intro p{font-size:13px}}

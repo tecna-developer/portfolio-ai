@@ -11,6 +11,26 @@
   const requested = Number(new URLSearchParams(location.search).get('slide'));
   let current = Number.isInteger(requested) && requested >= 1 && requested <= slides.length ? requested - 1 : 0;
   const languages = [...document.querySelectorAll('.case-language a')];
+  if (embedded) {
+    const english = document.documentElement.lang === 'en';
+    document.querySelectorAll('.case-slide img').forEach(img => {
+      let link = img.closest('a');
+      if (!link) {
+        link = document.createElement('a');
+        img.before(link);
+        link.append(img);
+      }
+      link.href = img.src;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.classList.add('case-image-link');
+      link.setAttribute('aria-label', (english ? 'Open full-size screenshot: ' : 'Открыть скриншот в полном размере: ') + img.alt);
+    });
+    const hint = document.createElement('p');
+    hint.className = 'preview-hint';
+    hint.textContent = english ? 'Select a screenshot to view it full size ↗' : 'Нажмите на скриншот, чтобы открыть полный размер ↗';
+    document.querySelector('.case-carousel').append(hint);
+  }
   const buttons = slides.map((slide, index) => {
     const button = document.createElement('button');
     button.type = 'button';
